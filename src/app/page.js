@@ -10,6 +10,7 @@ export default function Home() {
     <main className="bg-black text-white">
      <Navbar />
       <Hero />
+           <About />
     </main>
   );
 }
