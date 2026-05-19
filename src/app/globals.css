@@ -5,12 +5,26 @@ html {
 }
 
 body {
-    margin: 0;
+  margin: 0;
   background: black;
   color: white;
-   overflow-x: hidden;
+  overflow-x: hidden;
 }
 
- 
+/* Subtle fixed noise overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 999;
+}
 
-
+/* Global smooth transitions for common properties */
+* {
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter;
+}
