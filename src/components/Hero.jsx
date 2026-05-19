@@ -2,14 +2,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center
-      bg-black text-white px-6"
+      className="min-h-screen flex items-center px-6 pt-28 bg-transparent text-white scroll-mt-28"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
         {/* LEFT SIDE */}
         <div>
-
           <p className="text-gray-400 mb-4 tracking-widest">
             SOFTWARE ENGINEER
           </p>
@@ -22,13 +19,12 @@ export default function Hero() {
           </h1>
 
           <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-8">
-            I build modern, aesthetic and high-performance web
-            experiences using React, Next.js and Node.js.
+            I build modern, aesthetic and high-performance web experiences using
+            React, Next.js and Node.js.
           </p>
 
           {/* Buttons */}
           <div className="flex gap-4">
-
             <a
               href="#projects"
               className="bg-cyan-400 text-black
@@ -48,19 +44,16 @@ export default function Hero() {
             >
               Contact Me
             </a>
-
           </div>
         </div>
 
         {/* RIGHT SIDE */}
         <div className="flex justify-center">
-
           <div
-            className="relative w-[320px] h-[420px]
+            className="relative w-[320px] h-105
             rounded-[40px] overflow-hidden
             border border-white/10"
           >
-
             <img
               src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
               alt="profile"
@@ -70,14 +63,11 @@ export default function Hero() {
             {/* Glow */}
             <div
               className="absolute inset-0
-              bg-gradient-to-t
+              bg-linear-to-t
               from-cyan-500/20 to-transparent"
             />
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
