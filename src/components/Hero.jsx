@@ -13,19 +13,18 @@ export default function Hero() {
         {/* LEFT SIDE */}
         <Reveal>
           <div>
-            <p className="text-gray-400 mb-4 tracking-widest">
-              SOFTWARE ENGINEER
-            </p>
+             
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
               Hi, I’m <span className="text-cyan-400">Ulindu</span>
             </h1>
-
-            <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-8">
-              I build modern, aesthetic and high-performance web experiences
-              using React, Next.js and Node.js.
+<p className="text-gray-400 mb-4 tracking-widest">
+              SOFTWARE ENGINEER
             </p>
-
+            <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-8">
+               Turning complex problems into elegant, scalable solutions using Next.js& Spring Boot. I am deeply passionate about pushing the boundaries of web development by integrating AI/ML and automating workflows through DevOps.
+            </p>
+ 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
