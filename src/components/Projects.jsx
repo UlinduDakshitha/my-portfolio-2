@@ -26,16 +26,14 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen px-6 py-24 bg-[#050505] text-white"
+      className="min-h-screen px-6 py-24 scroll-mt-28 bg-[#050505] text-white"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center">
           <p className="text-cyan-400 tracking-[0.3em] uppercase text-sm mb-4">
             Projects
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Featured Work
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold">Featured Work</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -43,7 +41,7 @@ export default function Projects() {
             <div
               key={index}
               className="
-                group relative overflow-hidden rounded-[32px]
+                group relative overflow-hidden rounded-4xl
                 border border-white/10 bg-white/5 backdrop-blur-xl
                 transition duration-500 hover:-translate-y-2
                 hover:border-cyan-400/40
@@ -55,13 +53,11 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-3">
-                  {project.title}
-                </h3>
+                <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
 
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">
                   {project.description}

@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen px-6 py-24 bg-black text-white"
+      className="min-h-screen px-6 py-24 scroll-mt-28 bg-black text-white"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center">
@@ -16,7 +16,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Card */}
-          <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+          <div className="rounded-4xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
             <h3 className="text-2xl font-semibold mb-4">Get in touch</h3>
             <p className="text-gray-400 leading-relaxed mb-8">
               I’m currently open to internship opportunities, freelance work,
@@ -51,7 +51,7 @@ export default function Contact() {
           </div>
 
           {/* Right Card */}
-          <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 flex flex-col justify-between">
+          <div className="rounded-4xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 flex flex-col justify-between">
             <div>
               <h3 className="text-2xl font-semibold mb-4">Available for</h3>
 
