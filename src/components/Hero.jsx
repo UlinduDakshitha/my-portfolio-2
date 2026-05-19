@@ -5,11 +5,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center px-6 pt-28 bg-transparent text-white scroll-mt-28 overflow-hidden"
+      className="relative min-h-screen flex items-center px-6 pt-32 pb-20 scroll-mt-28 bg-transparent text-white overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.08),transparent_40%),radial-gradient(circle_at_bottom,rgba(168,85,247,0.06),transparent_35%)] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         {/* LEFT SIDE */}
         <Reveal>
           <div>
@@ -17,10 +17,7 @@ export default function Hero() {
               SOFTWARE ENGINEER
             </p>
 
-            <h1
-              className="text-5xl md:text-7xl
-              font-bold leading-tight mb-6"
-            >
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
               Hi, I’m <span className="text-cyan-400">Ulindu</span>
             </h1>
 
@@ -30,7 +27,7 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#projects"
                 className="bg-cyan-400 text-black
@@ -57,11 +54,7 @@ export default function Hero() {
         {/* RIGHT SIDE */}
         <Reveal delay={0.15}>
           <div className="flex justify-center">
-            <div
-              className="relative w-[320px] h-105
-              rounded-[40px] overflow-hidden
-              border border-white/10"
-            >
+            <div className="relative w-full max-w-[320px] sm:max-w-95 md:max-w-105 aspect-3/4 rounded-[40px] overflow-hidden border border-white/10">
               <Image
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
                 alt="profile"

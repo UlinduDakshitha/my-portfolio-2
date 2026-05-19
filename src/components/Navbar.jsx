@@ -1,13 +1,8 @@
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="max-w-6xl mx-auto px-6 pt-6">
-        
-        <div className="flex items-center justify-between
-        bg-white/5 border border-white/10
-        backdrop-blur-md rounded-full
-        px-6 py-4">
-
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 pt-6">
+        <div className="flex items-center justify-between bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-5 sm:px-6 py-4">
           {/* Logo */}
           <a
             href="#home"
@@ -18,7 +13,6 @@ export default function Navbar() {
 
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-
             <a
               href="#home"
               className="hover:text-white transition duration-300"
@@ -54,7 +48,6 @@ export default function Navbar() {
               Contact
             </a>
           </div>
-
         </div>
       </div>
     </nav>

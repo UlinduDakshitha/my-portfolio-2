@@ -42,7 +42,7 @@ export default function Projects() {
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Reveal key={index} delay={index * 0.1}>
-              <div className="group relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-cyan-400/40">
+              <div className="h-full group relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-cyan-400/40">
                 <div className="relative h-56 overflow-hidden">
                   <Image
                     src={project.image}
@@ -53,12 +53,12 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-65">
                   <h3 className="text-2xl font-semibold mb-3">
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
                     {project.description}
                   </p>
 

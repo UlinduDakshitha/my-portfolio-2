@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
+import CursorGlow from "@/components/CursorGlow";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
-import CursorGlow from "@/components/CursorGlow";
 
 export default function Home() {
   return (
@@ -17,15 +17,14 @@ export default function Home() {
         <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl animate-pulse" />
       </div>
 
-      {/* Content */}
-      <section className="relative z-10">
+      <div className="relative z-10">
         <Navbar />
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Contact />
-      </section>
+      </div>
     </main>
   );
 }
