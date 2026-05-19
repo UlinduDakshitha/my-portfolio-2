@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Reveal from "@/components/Reveal";
+
 export default function Projects() {
   const projects = [
     {
@@ -38,43 +41,40 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="
-                group relative overflow-hidden rounded-4xl
-                border border-white/10 bg-white/5 backdrop-blur-xl
-                transition duration-500 hover:-translate-y-2
-                hover:border-cyan-400/40
-              "
-            >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
-              </div>
+            <Reveal key={index} delay={index * 0.1}>
+              <div className="group relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-cyan-400/40">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
+                </div>
 
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
+                <div className="p-6">
+                  <h3 className="text-2xl font-semibold mb-3">
+                    {project.title}
+                  </h3>
 
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  {project.description}
-                </p>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    {project.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((item, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-gray-300"
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((item, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-gray-300"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
