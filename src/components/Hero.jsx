@@ -2,8 +2,10 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center px-6 pt-28 bg-transparent text-white scroll-mt-28"
+      className="relative min-h-screen flex items-center px-6 pt-28 bg-transparent text-white scroll-mt-28 overflow-hidden"
     >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.08),transparent_40%),radial-gradient(circle_at_bottom,rgba(168,85,247,0.06),transparent_35%)] pointer-events-none" />
+
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT SIDE */}
         <div>
