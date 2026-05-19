@@ -1,3 +1,4 @@
+import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 
 export default function Skills() {
@@ -26,16 +27,11 @@ export default function Skills() {
       className="min-h-screen px-6 py-24 scroll-mt-28 bg-black text-white"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div className="mb-16 text-center">
-          <p className="text-cyan-400 tracking-[0.3em] uppercase text-sm mb-4">
-            Skills
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Technologies I Work With
-          </h2>
-        </div>
+        <SectionTitle
+          eyebrow="Skills"
+          title="Technologies I Work With"
+          description="A focused stack for building modern, responsive, and high-performance web applications."
+        />
 
         {/* Skills Grid */}
         <div className="grid md:grid-cols-2 gap-8">

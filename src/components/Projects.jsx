@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 
 export default function Projects() {
@@ -32,12 +33,11 @@ export default function Projects() {
       className="min-h-screen px-6 py-24 scroll-mt-28 bg-[#050505] text-white"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 text-center">
-          <p className="text-cyan-400 tracking-[0.3em] uppercase text-sm mb-4">
-            Projects
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold">Featured Work</h2>
-        </div>
+        <SectionTitle
+          eyebrow="Projects"
+          title="Featured Work"
+          description="A few selected projects that show design sense, clean code, and practical problem solving."
+        />
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
