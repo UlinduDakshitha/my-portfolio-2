@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Mail, Link, ArrowRight, Clock3, CheckCircle2 } from "lucide-react";
