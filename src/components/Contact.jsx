@@ -1,8 +1,9 @@
- "use client";
+"use client";
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Linkedin, Github, ArrowRight, Clock3, CheckCircle2 } from "lucide-react";
+import { Mail, Link, ArrowRight, Clock3, CheckCircle2 } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 
@@ -39,7 +40,7 @@ export default function Contact() {
           subject: formData.subject,
           message: formData.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       );
 
       setStatus("success");
@@ -219,7 +220,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/5">
-                      <Linkedin size={22} />
+                      <FaLinkedin size={22} />
                     </div>
                     <div>
                       <p className="text-xs tracking-[0.3em] uppercase text-gray-400">
@@ -243,13 +244,15 @@ export default function Contact() {
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/5">
-                      <Github size={22} />
+                      <FaGithub size={22} />
                     </div>
                     <div>
                       <p className="text-xs tracking-[0.3em] uppercase text-gray-400">
                         GitHub
                       </p>
-                      <h4 className="font-semibold text-lg">Check out my code</h4>
+                      <h4 className="font-semibold text-lg">
+                        Check out my code
+                      </h4>
                     </div>
                   </div>
                   <ArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
@@ -264,7 +267,8 @@ export default function Contact() {
                   <div>
                     <h4 className="font-medium text-white">Quick Response</h4>
                     <p className="text-sm text-gray-400">
-                      I aim to respond to all messages within 24 hours during weekdays.
+                      I aim to respond to all messages within 24 hours during
+                      weekdays.
                     </p>
                   </div>
                 </div>
