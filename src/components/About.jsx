@@ -20,7 +20,7 @@ export default function About() {
             <div className="flex justify-center md:justify-start">
               <div className="relative w-full max-w-md h-105 rounded-4xl overflow-hidden border border-white/10 bg-white/5">
                 <Image
-                  src="https://images.unsplash.com/photo-1521119989659-a83eee488004"
+                  src="/images/profile2.jpg"
                   alt="about"
                   fill
                   className="object-cover opacity-90"
