@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
+import { BrainCircuit, Server, Cpu, Code2 } from "lucide-react";
 
 export default function About() {
   return (
@@ -11,58 +12,104 @@ export default function About() {
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           eyebrow="About Me"
-          title="A passionate developer building modern digital experiences."
-          description="I am a software engineering undergraduate focused on creating clean, responsive, and aesthetic web applications."
+          title="Engineering Systems Scaling Intelligence"
+          description="Focused on building modern, scalable, and intelligent digital experiences while continuously exploring cloud technologies, automation, and machine learning."
         />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT IMAGE */}
           <Reveal>
-            <div className="flex justify-center md:justify-start">
-              <div className="relative w-full max-w-md h-105 rounded-4xl overflow-hidden border border-white/10 bg-white/5">
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative w-full max-w-md aspect-3/4 rounded-[36px] overflow-hidden shadow-2xl shadow-cyan-500/10">
                 <Image
                   src="/images/profile2.jpg"
-                  alt="about"
+                  alt="Ulindu"
                   fill
-                  className="object-cover opacity-90"
+                  className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-cyan-400/10 via-transparent to-transparent" />
+                <div className="absolute -bottom-8 left-1/2 h-24 w-24 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
               </div>
             </div>
           </Reveal>
 
-          <Reveal delay={0.15}>
+          {/* RIGHT CONTENT */}
+          <Reveal delay={0.12}>
             <div>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                My main stack includes Next.js, React, Node.js, Tailwind CSS,
-                and MongoDB. I like working on projects that solve real problems
-                and leave a strong first impression.
+              <h3 className="text-2xl sm:text-3xl font-semibold mb-5 leading-tight">
+                Passionate about scalable systems, intelligent technologies, and
+                modern software engineering.
+              </h3>
+
+              <p className="text-gray-400 leading-relaxed mb-5">
+                I’m Ulindu Dakshitha, a Software Engineering undergraduate at
+                Sabaragamuwa University of Sri Lanka with a strong interest in
+                DevOps, Cloud Computing, Artificial Intelligence, Machine
+                Learning, and Deep Learning.
               </p>
 
-              <div className="grid sm:grid-cols-3 gap-4">
-                <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    Clean UI
-                  </h3>
+              <p className="text-gray-400 leading-relaxed mb-8">
+                I enjoy building high-performance applications, learning modern
+                infrastructure practices, and exploring how intelligent systems
+                can solve real-world problems. My current stack includes React,
+                Next.js, Node.js,Express.js,java,springboot MongoDB, MySQL, and
+                Tailwind CSS while I continuously expand my knowledge in
+                automation, cloud platforms, and AI technologies.
+              </p>
+
+              {/* FEATURE CARDS */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5">
+                  <div className="mb-3 text-cyan-400">
+                    <Server size={22} />
+                  </div>
+
+                  <h4 className="text-white font-semibold mb-2">DevOps</h4>
+
                   <p className="text-sm text-gray-400">
-                    Minimal, modern, and user-friendly design.
+                    Cloud, automation, scalability, and deployment workflows.
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    Full Stack
-                  </h3>
+                <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5">
+                  <div className="mb-3 text-cyan-400">
+                    <BrainCircuit size={22} />
+                  </div>
+
+                  <h4 className="text-white font-semibold mb-2">AI / ML</h4>
+
                   <p className="text-sm text-gray-400">
-                    Frontend and backend development experience.
+                    Exploring machine learning and intelligent systems.
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    Creative
-                  </h3>
+                <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5">
+                  <div className="mb-3 text-cyan-400">
+                    <Cpu size={22} />
+                  </div>
+
+                  <h4 className="text-white font-semibold mb-2">
+                    Deep Learning
+                  </h4>
+
                   <p className="text-sm text-gray-400">
-                    Focus on unique visuals and strong user experience.
+                    Interested in neural networks and advanced AI technologies.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5">
+                  <div className="mb-3 text-cyan-400">
+                    <Code2 size={22} />
+                  </div>
+
+                  <h4 className="text-white font-semibold mb-2">
+                    Full Stack Web & Mobile
+                  </h4>
+
+                  <p className="text-sm text-gray-400">
+                    Building responsive web apps and mobile-ready solutions end
+                    to end.
                   </p>
                 </div>
               </div>
