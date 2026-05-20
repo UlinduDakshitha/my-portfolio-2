@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { Mail, ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -13,38 +14,50 @@ export default function Hero() {
         {/* LEFT SIDE */}
         <Reveal>
           <div>
-             
-
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
               Hi, I’m <span className="text-cyan-400">Ulindu</span>
             </h1>
-<p className="text-gray-400 mb-4 tracking-widest">
+            <p className="text-gray-400 mb-4 tracking-widest">
               SOFTWARE ENGINEER
             </p>
             <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-8">
-               Turning complex problems into elegant, scalable solutions using Next.js& Spring Boot. I am deeply passionate about pushing the boundaries of web development by integrating AI/ML and automating workflows through DevOps.
+              Turning complex problems into elegant, scalable solutions using
+              Next.js& Spring Boot. I am deeply passionate about pushing the
+              boundaries of web development by integrating AI/ML and automating
+              workflows through DevOps.
             </p>
- 
+
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <a
-                href="#projects"
-                className="bg-cyan-400 text-black
-                px-6 py-3 rounded-full
-                font-semibold hover:scale-105
-                transition duration-300"
+                href="#contact"
+                className="inline-flex items-center gap-3 h-12 px-6 rounded-full bg-white text-black font-semibold shadow-[0_12px_40px_rgba(2,6,23,0.6)] hover:shadow-[0_18px_50px_rgba(14,165,233,0.12)] transform hover:-translate-y-0.5 transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/30"
               >
-                View Projects
+                <span className="p-2 rounded-full bg-black/5 flex items-center justify-center">
+                  <Mail size={16} />
+                </span>
+                Get in Touch
               </a>
 
               <a
-                href="#contact"
-                className="border border-white/20
-                px-6 py-3 rounded-full
-                hover:bg-white hover:text-black
-                transition duration-300"
+                href="#projects"
+                className="inline-flex items-center justify-center gap-3 h-12 px-6 rounded-full border border-white/12 bg-white/5 text-white backdrop-blur-sm hover:backdrop-blur-md hover:bg-white/6 transform hover:-translate-y-0.5 transition duration-200"
               >
-                Contact Me
+                <span className="text-sm">View Projects</span>
+                <span className="p-2 rounded-full bg-white/10 flex items-center justify-center">
+                  <ArrowRight size={14} />
+                </span>
+              </a>
+
+              <a
+                href="/cv/Ulindu_Dakshitha_Software%20Engineer_.pdf"
+                download
+                className="inline-flex items-center gap-3 h-12 px-6 rounded-full bg-linear-to-r from-cyan-400 to-blue-500 text-black font-medium shadow-sm hover:brightness-95 transform hover:-translate-y-0.5 transition duration-200"
+              >
+                <span className="p-2 rounded-full bg-black/10 flex items-center justify-center">
+                  <Download size={14} />
+                </span>
+                Download CV
               </a>
             </div>
           </div>

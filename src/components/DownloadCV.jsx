@@ -12,11 +12,11 @@ export default function DownloadCV() {
       </p>
 
       <a
-        href="/cv/Ulindu_Dakshitha_Software_Engineer_.pdf"
-         target="_blank"
-  rel="noreferrer"
-  className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 font-semibold text-black transition hover:scale-[1.03] hover:shadow-lg hover:shadow-cyan-500/20"
->
+        href="/cv/Ulindu_Dakshitha_Software%20Engineer_.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-3 rounded-full bg-linear-to-r from-cyan-400 to-blue-500 px-6 py-3 font-semibold text-black transition hover:scale-[1.03] hover:shadow-lg hover:shadow-cyan-500/20"
+      >
         <span className="grid h-8 w-8 place-items-center rounded-full bg-black/10">
           <ArrowDownRight size={18} />
         </span>

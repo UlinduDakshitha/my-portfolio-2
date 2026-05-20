@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
-import DownloadCV from "@/components/DownloadCV";
 
 export default function About() {
   return (
@@ -69,9 +68,6 @@ export default function About() {
               </div>
             </div>
           </Reveal>
-        </div>
-        <div className="mt-12">
-          <DownloadCV />
         </div>
       </div>
     </section>
