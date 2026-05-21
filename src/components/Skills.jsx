@@ -158,6 +158,38 @@ export default function Skills() {
           </div>
         </div>
 
+        {/* Tech Tiles (visual tiles for visible technologies) */}
+        <div className="mt-10">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-sm text-gray-400">
+              Showing{" "}
+              <span className="font-medium text-white">
+                {Array.from(new Set(visible.flatMap((s) => s.tech))).length}
+              </span>{" "}
+              technologies in{" "}
+              <span className="font-medium text-white">{active}</span>
+            </p>
+          </div>
+
+          <div className="flex gap-4 overflow-x-auto py-2">
+            {Array.from(new Set(visible.flatMap((s) => s.tech))).map((tech) => {
+              const badge = tech.replace(/\s+/g, "").slice(0, 2).toUpperCase();
+              return (
+                <div
+                  key={tech}
+                  title={tech}
+                  className="shrink-0 w-44 h-28 rounded-2xl bg-white/3 border border-white/8 p-4 flex flex-col items-center justify-center gap-2 hover:scale-105 transition"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-linear-to-tr from-cyan-500 to-blue-600 text-white flex items-center justify-center text-lg font-bold">
+                    {badge}
+                  </div>
+                  <div className="text-sm text-gray-200">{tech}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Skills Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visible.map((skill, index) => (
