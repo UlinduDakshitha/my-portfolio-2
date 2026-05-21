@@ -103,14 +103,12 @@ export default function Skills() {
         </div>
 
         {/* Compact Technical Skills (chip grid) */}
-        <div className="mt-10 max-w-4xl mx-auto text-gray-300">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mb-3">
-                Languages & Frameworks
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {[
+        <div className="mt-10 max-w-6xl mx-auto text-gray-300">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                heading: "Languages & Frameworks",
+                items: [
                   "Java",
                   "JavaScript",
                   "TypeScript",
@@ -119,69 +117,44 @@ export default function Skills() {
                   "Next.js",
                   "Node.js",
                   "Express.js",
-                ].map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mt-6 mb-3">
-                Mobile & Frontend Technologies
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {["React Native", "HTML", "CSS", "Tailwind CSS"].map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mb-3">
-                Databases
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {["MySQL", "MongoDB", "PostgreSQL", "Sequelize ORM"].map(
-                  (t) => (
-                    <span
-                      key={t}
-                      className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
-                    >
-                      {t}
-                    </span>
-                  ),
-                )}
-              </div>
-
-              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mt-6 mb-3">
-                Tools & Platforms
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {[
+                ],
+              },
+              {
+                heading: "Mobile & Frontend Technologies",
+                items: ["React Native", "HTML", "CSS", "Tailwind CSS"],
+              },
+              {
+                heading: "Databases & Tools",
+                items: [
+                  "MySQL",
+                  "MongoDB",
+                  "PostgreSQL",
+                  "Sequelize ORM",
                   "Git",
                   "GitHub",
                   "REST APIs",
                   "JWT Authentication",
-                  "AWS",
-                  "Postman",
-                ].map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
-                  >
-                    {t}
-                  </span>
-                ))}
+                ],
+              },
+            ].map((col) => (
+              <div key={col.heading}>
+                <h4 className="text-sm text-cyan-400 uppercase tracking-wider mb-3">
+                  {col.heading}
+                </h4>
+
+                <div className="flex flex-wrap gap-3">
+                  {col.items.map((t) => (
+                    <span
+                      key={t}
+                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/10 text-sm text-gray-200 hover:bg-cyan-500/8 transition"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-cyan-400 inline-block shrink-0" />
+                      <span className="select-none">{t}</span>
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
