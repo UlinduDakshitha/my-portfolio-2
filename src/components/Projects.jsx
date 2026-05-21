@@ -9,7 +9,7 @@ export default function Projects() {
       title: "SMARTBIZ",
       subtitle: "Individual Project",
       role: "Fullstack Developer",
-      image: "/images/project1.jpg",
+      image: "/images/SmartBiz.jpg",
       description:
         "A full-stack ERP system built as sole developer, managing inventory, customer records, and core business operations across 5+ integrated modules. Includes secure JWT authentication and 20+ RESTful API endpoints achieving full CRUD.",
       tech: ["React.js", "Java Spring Boot", "MySQL"],
@@ -20,7 +20,7 @@ export default function Projects() {
       title: "INKMATCH",
       subtitle: "Individual",
       role: "Fullstack Developer",
-      image: "/images/project2.jpg",
+      image: "/images/inkMatch.jpg",
       description:
         "A marketplace platform for users to discover tattoo artists and studios, browse portfolios, and book appointments. Features 4-tier role-based access control and scalable APIs for bookings and portfolios.",
       tech: ["Next.js", "Java Spring Boot", "MySQL"],
@@ -30,7 +30,7 @@ export default function Projects() {
       title: "SULSCORE",
       subtitle: "Group (Ongoing)",
       role: "Backend Developer",
-      image: "/images/project3.jpg",
+      image: "/images/suslcore.png",
       description:
         "A university-level financial management system for Sabaragamuwa University to manage fee systems and financial workflows with role-based access and regular code reviews.",
       tech: ["Next.js", "Node.js", "Express.js", "MySQL"],
@@ -40,7 +40,7 @@ export default function Projects() {
       title: "PURE NATION",
       subtitle: "Group Project",
       role: "Fullstack Developer",
-      image: "/images/project4.jpg",
+      image: "/images/pure nation.jpg",
       description:
         "A community platform for Sri Lankans to report environmental issues and coordinate clean-up activities, with RESTful APIs and responsive UI.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
@@ -50,7 +50,7 @@ export default function Projects() {
       title: "CEYLONCONNECT",
       subtitle: "Group Project",
       role: "Frontend Lead",
-      image: "/images/project5.jpg",
+      image: "/images/ceylonconnect.jpg",
       description:
         "A tourism platform connecting travelers with Sri Lankan destinations and services, built with a focus on performance and responsive interfaces.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Prisma"],
