@@ -8,9 +8,9 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { label: "GitHub", href: "https://github.com", icon: FaGithub },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: FaLinkedin },
-  { label: "X", href: "https://x.com", icon: FaXTwitter },
+  { label: "GitHub", href: "https://github.com/UlinduDakshitha", icon: FaGithub },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ulindu-dakshitha-bandara-6aa081303/", icon: FaLinkedin },
+  { label: "X", href: "https://x.com/DakshithaU91762", icon: FaXTwitter },
 ];
 
 export default function Footer() {

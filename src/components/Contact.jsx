@@ -212,7 +212,7 @@ export default function Contact() {
 
             <Reveal delay={0.15}>
               <a
-                href="https://www.linkedin.com"
+                href=" https://www.linkedin.com/in/ulindu-dakshitha-bandara-6aa081303/"
                 target="_blank"
                 rel="noreferrer"
                 className="group block rounded-[24px] border border-sky-500/20 bg-sky-500/10 p-5 hover:border-sky-400/40 hover:bg-sky-500/15 transition"
@@ -236,7 +236,7 @@ export default function Contact() {
 
             <Reveal delay={0.2}>
               <a
-                href="https://github.com"
+                href=" https://github.com/UlinduDakshitha"
                 target="_blank"
                 rel="noreferrer"
                 className="group block rounded-[24px] border border-white/10 bg-white/5 p-5 hover:border-white/20 hover:bg-white/10 transition"
