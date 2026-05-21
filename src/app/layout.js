@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Ulindu Portfolio",
+  title: "Ulindu | Software Engineer",
   description: "Modern software engineer portfolio",
 };
 
