@@ -8,7 +8,6 @@ export default function Projects() {
     {
       title: "SMARTBIZ",
       subtitle: "Individual Project",
-      period: "Jan–Mar 2026",
       role: "Fullstack Developer",
       image: "/images/project1.jpg",
       description:
@@ -19,50 +18,42 @@ export default function Projects() {
     },
     {
       title: "INKMATCH",
-      subtitle: "Individual (Ongoing)",
-      period: "Feb 2026–Present",
+      subtitle: "Individual",
       role: "Fullstack Developer",
       image: "/images/project2.jpg",
       description:
         "A marketplace platform for users to discover tattoo artists and studios, browse portfolios, and book appointments. Features 4-tier role-based access control and scalable APIs for bookings and portfolios.",
       tech: ["Next.js", "Java Spring Boot", "MySQL"],
-      demo: "#",
       code: "#",
     },
     {
       title: "SULSCORE",
       subtitle: "Group (Ongoing)",
-      period: "Jan 2026–Present",
       role: "Backend Developer",
       image: "/images/project3.jpg",
       description:
         "A university-level financial management system for Sabaragamuwa University to manage fee systems and financial workflows with role-based access and regular code reviews.",
       tech: ["Next.js", "Node.js", "Express.js", "MySQL"],
-      demo: "#",
       code: "#",
     },
     {
       title: "PURE NATION",
       subtitle: "Group Project",
-      period: "Jun–Dec 2025",
       role: "Fullstack Developer",
       image: "/images/project4.jpg",
       description:
         "A community platform for Sri Lankans to report environmental issues and coordinate clean-up activities, with RESTful APIs and responsive UI.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Sequelize"],
-      demo: "#",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
       code: "#",
     },
     {
       title: "CEYLONCONNECT",
       subtitle: "Group Project",
-      period: "Mar–Aug 2025",
       role: "Frontend Lead",
       image: "/images/project5.jpg",
       description:
         "A tourism platform connecting travelers with Sri Lankan destinations and services, built with a focus on performance and responsive interfaces.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Prisma"],
-      demo: "#",
       code: "#",
     },
   ];
@@ -141,16 +132,6 @@ export default function Projects() {
                   </div>
 
                   <div className="flex items-center gap-3 mt-5">
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-cyan-400 to-blue-600 text-black rounded-2xl text-sm font-semibold"
-                      >
-                        <FiExternalLink /> Demo
-                      </a>
-                    )}
                     {project.code && (
                       <a
                         href={project.code}
