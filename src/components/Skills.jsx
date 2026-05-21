@@ -158,7 +158,7 @@ export default function Skills() {
                 onClick={() => setActive(p)}
                 className={`px-4 py-1.5 rounded-full border text-sm font-medium transition ${
                   active === p
-                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white border-transparent"
+                    ? "bg-linear-to-r from-purple-600 to-indigo-600 text-white border-transparent"
                     : "bg-transparent text-gray-200 border border-white/10"
                 }`}
               >
@@ -189,14 +189,14 @@ export default function Skills() {
                       overflow-hidden
                       rounded-[28px]
                       border border-white/10
-                      bg-white/[0.03]
+                      bg-white/3
                       backdrop-blur-xl
                       p-8
                       flex flex-col items-center justify-center
                       transition duration-300
                       hover:-translate-y-2
                       hover:border-cyan-400/30
-                      hover:bg-white/[0.05]
+                      hover:bg-white/5
                       "
                     >
                       {/* glow */}
@@ -205,7 +205,7 @@ export default function Skills() {
                         absolute inset-0
                         opacity-0 group-hover:opacity-100
                         transition duration-500
-                        bg-gradient-to-br
+                        bg-linear-to-br
                         from-cyan-500/10
                         via-transparent
                         to-transparent
@@ -213,17 +213,14 @@ export default function Skills() {
                       />
 
                       {/* icon */}
-                      <div
-                        className={`
-                        relative z-10
-                        text-5xl
-                        mb-5
-                        ${skill.color}
-                        transition duration-300
-                        group-hover:scale-110
-                        `}
-                      >
-                        {skill.icon}
+                      <div className="relative z-10 mb-4">
+                        <div
+                          className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center ${skill.color} bg-white/5 shadow-sm transition-transform duration-300 group-hover:scale-105`}
+                        >
+                          <span className="text-2xl md:text-3xl">
+                            {skill.icon}
+                          </span>
+                        </div>
                       </div>
 
                       {/* text */}
