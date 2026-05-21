@@ -102,6 +102,89 @@ export default function Skills() {
           </div>
         </div>
 
+        {/* Compact Technical Skills (chip grid) */}
+        <div className="mt-10 max-w-4xl mx-auto text-gray-300">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mb-3">
+                Languages & Frameworks
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Java",
+                  "JavaScript",
+                  "TypeScript",
+                  "Spring Boot",
+                  "React.js",
+                  "Next.js",
+                  "Node.js",
+                  "Express.js",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mt-6 mb-3">
+                Mobile & Frontend Technologies
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {["React Native", "HTML", "CSS", "Tailwind CSS"].map((t) => (
+                  <span
+                    key={t}
+                    className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mb-3">
+                Databases
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {["MySQL", "MongoDB", "PostgreSQL", "Sequelize ORM"].map(
+                  (t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
+                    >
+                      {t}
+                    </span>
+                  ),
+                )}
+              </div>
+
+              <h4 className="text-sm text-cyan-400 uppercase tracking-wider mt-6 mb-3">
+                Tools & Platforms
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Git",
+                  "GitHub",
+                  "REST APIs",
+                  "JWT Authentication",
+                  "AWS",
+                  "Postman",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="px-3 py-1 text-sm rounded-full bg-white/3 border border-white/8"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Skills Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visible.map((skill, index) => (
