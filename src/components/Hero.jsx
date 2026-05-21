@@ -73,7 +73,7 @@ export default function Hero() {
 
               <div className="flex items-center gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/UlinduDakshitha"
                   target="_blank"
                   rel="noreferrer"
                   className="h-11 w-11 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:scale-105 transition"
@@ -82,7 +82,7 @@ export default function Hero() {
                 </a>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/ulindu-dakshitha-bandara-6aa081303/"
                   target="_blank"
                   rel="noreferrer"
                   className="h-11 w-11 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:scale-105 transition"
@@ -91,7 +91,7 @@ export default function Hero() {
                 </a>
 
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/DakshithaU91762"
                   target="_blank"
                   rel="noreferrer"
                   className="h-11 w-11 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:scale-105 transition"
