@@ -48,9 +48,8 @@ const categories = [
       { name: "CSS3", icon: <FaCss3Alt />, color: "text-blue-500" },
       { name: "JavaScript", icon: <FaJs />, color: "text-yellow-400" },
       { name: "TypeScript", icon: <SiTypescript />, color: "text-blue-400" },
-    
-      
-      { name: "Python", icon: <FaPython />, color: "text-yellow-300" },
+      { name: "Java", icon: <FaJava />, color: "text-orange-400" },
+     
     ],
   },
 
@@ -70,7 +69,6 @@ const categories = [
     skills: [
       { name: "Node.js", icon: <FaNodeJs />, color: "text-lime-400" },
       { name: "Express", icon: <SiExpress />, color: "text-gray-200" },
-      { name: "Flask", icon: <SiFlask />, color: "text-gray-100" },
       { name: "Spring", icon: <SiSpring />, color: "text-lime-400" },
     ],
   },
@@ -92,7 +90,6 @@ const categories = [
       { name: "GitHub", icon: <FaGithub />, color: "text-white" },
       { name: "Docker", icon: <FaDocker />, color: "text-blue-400" },
       { name: "AWS", icon: <FaAws />, color: "text-yellow-400" },
-      { name: "Jenkins", icon: <SiJenkins />, color: "text-red-300" },
       { name: "Kubernetes", icon: <SiKubernetes />, color: "text-blue-500" },
       { name: "Linux", icon: <FaLinux />, color: "text-yellow-200" },
       { name: "Ubuntu", icon: <SiUbuntu />, color: "text-orange-400" },
