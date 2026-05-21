@@ -4,20 +4,47 @@ import Reveal from "@/components/Reveal";
 export default function Skills() {
   const skills = [
     {
-      title: "Frontend",
-      tech: ["React", "Next.js", "Tailwind CSS", "JavaScript"],
+      title: "Languages & Frameworks",
+      tech: [
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "Spring Boot",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+      ],
     },
     {
-      title: "Backend",
-      tech: ["Node.js", "Express.js", "REST API", "JWT"],
+      title: "Mobile & Frontend",
+      tech: ["React Native", "HTML", "CSS", "Tailwind CSS"],
     },
     {
-      title: "Database",
-      tech: ["MongoDB", "MySQL", "Firebase", "Mongoose"],
+      title: "Databases",
+      tech: ["MySQL", "MongoDB", "PostgreSQL", "Sequelize ORM"],
     },
     {
-      title: "Tools",
-      tech: ["Git", "GitHub", "Figma", "VS Code"],
+      title: "Tools & Platforms",
+      tech: [
+        "Git",
+        "GitHub",
+        "REST APIs",
+        "JWT Authentication",
+        "AWS",
+        "Postman",
+      ],
+    },
+    {
+      title: "Development Practices",
+      tech: [
+        "Agile Development",
+        "Debugging",
+        "API Development",
+        "Secure Coding",
+        "Testing",
+        "Problem Solving",
+      ],
     },
   ];
 
@@ -34,28 +61,25 @@ export default function Skills() {
         />
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <Reveal key={index} delay={index * 0.08}>
-              <div className="group relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition duration-500 hover:border-cyan-400/40 hover:-translate-y-2">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-linear-to-br from-cyan-500/10 via-transparent to-transparent" />
-
-                {/* Card Content */}
+            <Reveal key={index} delay={index * 0.06}>
+              <div className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/3 backdrop-blur p-6 transition duration-400 hover:shadow-xl hover:translate-y-1">
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-semibold mb-6">{skill.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-4">
+                    {skill.title}
+                  </h3>
 
-                  <div className="flex flex-wrap gap-3">
+                  <ul className="text-sm text-gray-300 space-y-2">
                     {skill.tech.map((item, i) => (
-                      <span
-                        key={i}
-                        className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 hover:bg-cyan-400 hover:text-black transition duration-300 cursor-default"
-                      >
-                        {item}
-                      </span>
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="mt-1 w-2 h-2 rounded-full bg-cyan-400 shrink-0" />
+                        <span>{item}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
+                <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-cyan-500/6 blur-3xl pointer-events-none" />
               </div>
             </Reveal>
           ))}
