@@ -87,16 +87,16 @@ export default function Skills() {
               <button
                 key={f.key}
                 onClick={() => setActive(f.key)}
-                className={`inline-flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full text-sm transition ${
+                className={`inline-flex items-center gap-3 px-4 py-2 rounded-full text-sm font-medium border border-white/10 bg-black/60 text-gray-200 transition transform focus:outline-none focus:ring-2 focus:ring-cyan-400/20 ${
                   active === f.key
-                    ? "ring-1 ring-cyan-400 scale-100"
-                    : "hover:scale-[1.02]"
+                    ? "ring-1 ring-cyan-400 scale-100 border-cyan-400 bg-white/5"
+                    : "hover:scale-105 hover:border-white/20"
                 }`}
               >
                 <span
-                  className={`${f.color} w-2 h-2 rounded-full inline-block`}
+                  className={`${f.color} w-2 h-2 rounded-full inline-block shrink-0`}
                 />
-                <span>{f.label}</span>
+                <span className="select-none">{f.label}</span>
               </button>
             ))}
           </div>
