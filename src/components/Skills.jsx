@@ -1,9 +1,25 @@
+"use client";
+
+import { useState } from "react";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 
 export default function Skills() {
+  const filters = [
+    { key: "All", label: "All", color: "bg-gray-500/40" },
+    { key: "Languages", label: "Languages", color: "bg-amber-400" },
+    { key: "Frontend", label: "Frontend", color: "bg-sky-400" },
+    { key: "Backend", label: "Backend", color: "bg-lime-400" },
+    { key: "Database", label: "Database", color: "bg-cyan-400" },
+    { key: "AI", label: "AI / ML", color: "bg-violet-400" },
+    { key: "DevOps", label: "DevOps & Tools", color: "bg-pink-400" },
+  ];
+
+  const [active, setActive] = useState("All");
+
   const skills = [
     {
+      key: "Languages",
       title: "Languages & Frameworks",
       tech: [
         "Java",
@@ -12,41 +28,37 @@ export default function Skills() {
         "Spring Boot",
         "React.js",
         "Next.js",
-        "Node.js",
-        "Express.js",
       ],
     },
     {
-      title: "Mobile & Frontend",
-      tech: ["React Native", "HTML", "CSS", "Tailwind CSS"],
+      key: "Frontend",
+      title: "Frontend & Mobile",
+      tech: ["React Native", "React", "HTML", "CSS", "Tailwind CSS"],
     },
     {
+      key: "Backend",
+      title: "Backend",
+      tech: ["Node.js", "Express.js", "REST APIs", "JWT"],
+    },
+    {
+      key: "Database",
       title: "Databases",
       tech: ["MySQL", "MongoDB", "PostgreSQL", "Sequelize ORM"],
     },
     {
-      title: "Tools & Platforms",
-      tech: [
-        "Git",
-        "GitHub",
-        "REST APIs",
-        "JWT Authentication",
-        "AWS",
-        "Postman",
-      ],
+      key: "AI",
+      title: "AI / ML",
+      tech: ["Machine Learning", "Deep Learning", "TensorFlow", "PyTorch"],
     },
     {
-      title: "Development Practices",
-      tech: [
-        "Agile Development",
-        "Debugging",
-        "API Development",
-        "Secure Coding",
-        "Testing",
-        "Problem Solving",
-      ],
+      key: "DevOps",
+      title: "DevOps & Tools",
+      tech: ["Git", "GitHub", "AWS", "Docker", "CI/CD", "Postman"],
     },
   ];
+
+  const visible =
+    active === "All" ? skills : skills.filter((s) => s.key === active);
 
   return (
     <section
@@ -54,15 +66,45 @@ export default function Skills() {
       className="min-h-screen px-6 py-24 scroll-mt-28 bg-black text-white"
     >
       <div className="max-w-6xl mx-auto">
-        <SectionTitle
-          eyebrow="Skills"
-          title="Technologies I Work With"
-          description="A focused stack for building modern, responsive, and high-performance web applications."
-        />
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center gap-3 mb-6">
+            <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-cyan-400 tracking-widest">
+              TECH STACK
+            </span>
+          </div>
+
+          <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-3">
+            Tools I Work <span className="text-slate-300">With</span>
+          </h2>
+
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Technologies and tools I use to bring ideas to life
+          </p>
+
+          {/* Filter Pills */}
+          <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
+            {filters.map((f) => (
+              <button
+                key={f.key}
+                onClick={() => setActive(f.key)}
+                className={`inline-flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full text-sm transition ${
+                  active === f.key
+                    ? "ring-1 ring-cyan-400 scale-100"
+                    : "hover:scale-[1.02]"
+                }`}
+              >
+                <span
+                  className={`${f.color} w-2 h-2 rounded-full inline-block`}
+                />
+                <span>{f.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* Skills Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+          {visible.map((skill, index) => (
             <Reveal key={index} delay={index * 0.06}>
               <div className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/3 backdrop-blur p-6 transition duration-400 hover:shadow-xl hover:translate-y-1">
                 <div className="relative z-10">
