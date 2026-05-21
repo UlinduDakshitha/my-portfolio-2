@@ -102,61 +102,7 @@ export default function Skills() {
           </div>
         </div>
 
-        {/* Compact Technical Skills (chip grid) */}
-        <div className="mt-10 max-w-6xl mx-auto text-gray-300">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                heading: "Languages & Frameworks",
-                items: [
-                  "Java",
-                  "JavaScript",
-                  "TypeScript",
-                  "Spring Boot",
-                  "React.js",
-                  "Next.js",
-                  "Node.js",
-                  "Express.js",
-                ],
-              },
-              {
-                heading: "Mobile & Frontend Technologies",
-                items: ["React Native", "HTML", "CSS", "Tailwind CSS"],
-              },
-              {
-                heading: "Databases & Tools",
-                items: [
-                  "MySQL",
-                  "MongoDB",
-                  "PostgreSQL",
-                  "Sequelize ORM",
-                  "Git",
-                  "GitHub",
-                  "REST APIs",
-                  "JWT Authentication",
-                ],
-              },
-            ].map((col) => (
-              <div key={col.heading}>
-                <h4 className="text-sm text-cyan-400 uppercase tracking-wider mb-3">
-                  {col.heading}
-                </h4>
-
-                <div className="flex flex-wrap gap-3">
-                  {col.items.map((t) => (
-                    <span
-                      key={t}
-                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/10 text-sm text-gray-200 hover:bg-cyan-500/8 transition"
-                    >
-                      <span className="w-2 h-2 rounded-full bg-cyan-400 inline-block shrink-0" />
-                      <span className="select-none">{t}</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Compact Technical Skills removed per request */}
 
         {/* Tech Tiles (visual tiles for visible technologies) */}
         <div className="mt-10">
