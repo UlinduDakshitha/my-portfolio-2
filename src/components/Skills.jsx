@@ -182,35 +182,9 @@ export default function Skills() {
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {category.skills.map((skill, index) => (
                   <Reveal key={index} delay={index * 0.04}>
-                    <div
-                      className="
-                      group
-                      relative
-                      overflow-hidden
-                      rounded-[28px]
-                      border border-white/10
-                      bg-white/3
-                      backdrop-blur-xl
-                      p-8
-                      flex flex-col items-center justify-center
-                      transition duration-300
-                      hover:-translate-y-2
-                      hover:border-cyan-400/30
-                      hover:bg-white/5
-                      "
-                    >
+                    <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 flex flex-col items-center justify-center transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/5">
                       {/* glow */}
-                      <div
-                        className="
-                        absolute inset-0
-                        opacity-0 group-hover:opacity-100
-                        transition duration-500
-                        bg-linear-to-br
-                        from-cyan-500/10
-                        via-transparent
-                        to-transparent
-                        "
-                      />
+                      <div className="absolute inset-0 opacity-0 transition duration-500 bg-linear-to-br from-cyan-500/10 via-transparent to-transparent group-hover:opacity-100" />
 
                       {/* icon */}
                       <div className="relative z-10 mb-4">

@@ -2,7 +2,7 @@ import { ArrowDownRight } from "lucide-react";
 
 export default function DownloadCV() {
   return (
-    <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-8 shadow-xl shadow-black/20">
+    <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-8 shadow-xl shadow-black/20">
       <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
         Download my CV
       </h3>

@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/image";
+
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Link, ArrowRight, Clock3, CheckCircle2 } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import SectionTitle from "@/components/SectionTitle";
-import Reveal from "@/components/Reveal";
+import { ArrowRight, Clock3, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,15 +12,46 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-
-  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const contactLinks = [
+    {
+      label: "Email",
+      title: "Send an email",
+      href: "mailto:yourmail@gmail.com",
+      icon: Mail,
+      accent:
+        "border-violet-500/20 bg-[linear-gradient(135deg,rgba(88,28,135,0.85),rgba(23,15,48,0.95))] hover:border-violet-400/40 hover:bg-[linear-gradient(135deg,rgba(88,28,135,0.92),rgba(23,15,48,0.98))]",
+    },
+    {
+      label: "LinkedIn",
+      title: "Connect with me",
+      href: "https://www.linkedin.com/in/ulindu-dakshitha-bandara-6aa081303/",
+      icon: FaLinkedin,
+      accent:
+        "border-sky-500/20 bg-[linear-gradient(135deg,rgba(8,26,51,0.95),rgba(7,19,35,0.98))] hover:border-sky-400/40 hover:bg-[linear-gradient(135deg,rgba(10,33,63,0.98),rgba(7,19,35,1))]",
+    },
+    {
+      label: "GitHub",
+      title: "Check out my code",
+      href: "https://github.com/UlinduDakshitha",
+      icon: FaGithub,
+      accent:
+        "border-white/10 bg-[linear-gradient(135deg,rgba(16,16,16,0.98),rgba(8,8,8,0.98))] hover:border-white/20 hover:bg-[linear-gradient(135deg,rgba(24,24,24,1),rgba(10,10,10,1))]",
+    },
+    {
+      label: "X / Twitter",
+      title: "Follow me",
+      href: "#",
+      icon: FaXTwitter,
+      accent:
+        "border-cyan-500/20 bg-[linear-gradient(135deg,rgba(7,31,38,0.95),rgba(4,19,24,0.98))] hover:border-cyan-400/40 hover:bg-[linear-gradient(135deg,rgba(8,38,47,1),rgba(4,19,24,1))]",
+    },
+  ];
 
   const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e) => {
@@ -35,23 +64,21 @@ export default function Contact() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
+          title: formData.subject,
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
+          time: new Date().toLocaleString(),
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
       );
 
       setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      console.error("Email send failed:", error);
+      console.error("Email send error:", error);
       setStatus("error");
     } finally {
       setLoading(false);
@@ -59,221 +86,162 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen px-6 py-24 bg-black text-white scroll-mt-28"
-    >
-      <div className="max-w-6xl mx-auto">
-        <SectionTitle
-          eyebrow="Contact"
-          title="Let's Work Together"
-          description="Have a project in mind or just want to say hi? I'd love to hear from you."
-        />
+    <section id="contact" className="bg-black px-6 py-24 text-white scroll-mt-28">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl">
+            Let&apos;s Work Together
+          </h2>
+          <p className="mt-4 text-base text-gray-400 sm:text-lg">
+            Have a project in mind or just want to say hi? I&apos;d love to hear from you.
+          </p>
+        </div>
 
-        <div className="grid lg:grid-cols-[1.4fr_0.9fr] gap-8">
-          {/* Left form */}
-          <Reveal>
-            <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-8 shadow-2xl shadow-black/30">
-              <div className="mb-8">
-                <h3 className="text-2xl font-semibold mb-2">Send a Message</h3>
-                <p className="text-gray-400">
-                  I typically respond within 24 hours.
-                </p>
-              </div>
+        <div className="mt-16 grid gap-10 lg:grid-cols-[1.35fr_0.95fr] lg:items-start">
+          <div className="rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(28,28,33,0.96),rgba(16,16,20,0.98))] p-6 shadow-2xl shadow-black/30 sm:p-8">
+            <h3 className="text-2xl font-semibold text-white">Send a Message</h3>
+            <p className="mt-2 text-gray-400">I typically respond within 24 hours.</p>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold tracking-[0.25em] text-gray-400 uppercase mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your name"
-                      required
-                      className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20 transition"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold tracking-[0.25em] text-gray-400 uppercase mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your@email.com"
-                      required
-                      className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20 transition"
-                    />
-                  </div>
-                </div>
-
+            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-semibold tracking-[0.25em] text-gray-400 uppercase mb-2">
-                    Subject
+                  <label className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
+                    Name
                   </label>
                   <input
                     type="text"
-                    name="subject"
-                    value={formData.subject}
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
-                    placeholder="What's this about?"
+                    placeholder="Your name"
                     required
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20 transition"
+                    className="w-full rounded-2xl border border-white/10 bg-[#232329] px-4 py-3.5 text-white outline-none transition placeholder:text-gray-500 focus:border-white/20 focus:ring-2 focus:ring-white/10"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold tracking-[0.25em] text-gray-400 uppercase mb-2">
-                    Message
+                  <label className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
+                    Email
                   </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
-                    placeholder="Tell me about your project, idea, or just say hi..."
+                    placeholder="your@email.com"
                     required
-                    rows={6}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20 transition resize-none"
+                    className="w-full rounded-2xl border border-white/10 bg-[#232329] px-4 py-3.5 text-white outline-none transition placeholder:text-gray-500 focus:border-white/20 focus:ring-2 focus:ring-white/10"
                   />
                 </div>
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full rounded-2xl bg-white text-black px-6 py-4 font-semibold hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed transition flex items-center justify-center gap-2"
-                >
-                  <Mail size={18} />
-                  {loading ? "Sending..." : "Send Message"}
-                </button>
+              <div>
+                <label className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="What's this about?"
+                  required
+                  className="w-full rounded-2xl border border-white/10 bg-[#232329] px-4 py-3.5 text-white outline-none transition placeholder:text-gray-500 focus:border-white/20 focus:ring-2 focus:ring-white/10"
+                />
+              </div>
 
-                {status === "success" && (
-                  <div className="flex items-center gap-2 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-emerald-300">
-                    <CheckCircle2 size={18} />
-                    Message sent successfully.
-                  </div>
-                )}
+              <div>
+                <label className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell me about your project, idea, or just say hi..."
+                  rows={7}
+                  required
+                  className="w-full resize-none rounded-2xl border border-white/10 bg-[#232329] px-4 py-3.5 text-white outline-none transition placeholder:text-gray-500 focus:border-white/20 focus:ring-2 focus:ring-white/10"
+                />
+              </div>
 
-                {status === "error" && (
-                  <div className="flex items-center gap-2 rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-red-300">
-                    <CheckCircle2 size={18} />
-                    Something went wrong. Try again.
-                  </div>
-                )}
-              </form>
-            </div>
-          </Reveal>
+              <button
+                type="submit"
+                disabled={loading}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-6 py-4 font-semibold text-black transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <Mail size={18} />
+                {loading ? "Sending..." : "Send Message"}
+              </button>
 
-          {/* Right cards */}
+              {status === "success" && (
+                <p className="text-sm text-emerald-400">Message sent successfully.</p>
+              )}
+
+              {status === "error" && (
+                <p className="text-sm text-red-400">Something went wrong. Try again.</p>
+              )}
+            </form>
+          </div>
+
           <div className="space-y-5">
-            <Reveal delay={0.05}>
-              <div className="rounded-[24px] border border-emerald-500/20 bg-emerald-500/10 p-5">
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.8)]" />
-                  <div>
-                    <h4 className="font-semibold text-emerald-200">
-                      Available for opportunities
-                    </h4>
-                    <p className="text-sm text-emerald-100/70">
-                      Open to full-time & freelance roles
-                    </p>
-                  </div>
+            <div className="rounded-3xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(3,29,20,0.98),rgba(4,18,13,0.98))] p-5 shadow-lg shadow-black/20 sm:p-6">
+              <div className="flex items-start gap-3">
+                <div className="mt-1 h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.8)]" />
+                <div>
+                  <h3 className="font-semibold text-emerald-200">Available for opportunities</h3>
+                  <p className="text-sm text-emerald-100/70">Open to full-time & freelance roles</p>
                 </div>
               </div>
-            </Reveal>
+            </div>
 
-            <Reveal delay={0.1}>
-              <a
-                href="mailto:yourmail@gmail.com"
-                className="group block rounded-[24px] border border-violet-500/20 bg-violet-500/10 p-5 hover:border-violet-400/40 hover:bg-violet-500/15 transition"
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/5">
-                      <Mail size={22} />
+            {contactLinks.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  className={`group block rounded-3xl border p-5 transition sm:p-6 ${item.accent}`}
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white/90">
+                        <Icon size={22} />
+                      </div>
+
+                      <div>
+                        <p className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500">
+                          {item.label}
+                        </p>
+                        <h4 className="text-lg font-semibold text-gray-100">
+                          {item.title}
+                        </h4>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs tracking-[0.3em] uppercase text-gray-400">
-                        Email
-                      </p>
-                      <h4 className="font-semibold text-lg">Send an email</h4>
-                    </div>
+
+                    <ArrowRight className="text-gray-500 transition group-hover:translate-x-1 group-hover:text-gray-300" />
                   </div>
-                  <ArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+                </a>
+              );
+            })}
+
+            <div className="rounded-3xl border border-white/10 bg-[linear-gradient(135deg,rgba(18,18,18,0.98),rgba(10,10,10,0.98))] p-5 sm:p-6">
+              <div className="flex items-start gap-3">
+                <div className="grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 text-gray-200">
+                  <Clock3 size={18} />
                 </div>
-              </a>
-            </Reveal>
 
-            <Reveal delay={0.15}>
-              <a
-                href=" https://www.linkedin.com/in/ulindu-dakshitha-bandara-6aa081303/"
-                target="_blank"
-                rel="noreferrer"
-                className="group block rounded-[24px] border border-sky-500/20 bg-sky-500/10 p-5 hover:border-sky-400/40 hover:bg-sky-500/15 transition"
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/5">
-                      <FaLinkedin size={22} />
-                    </div>
-                    <div>
-                      <p className="text-xs tracking-[0.3em] uppercase text-gray-400">
-                        LinkedIn
-                      </p>
-                      <h4 className="font-semibold text-lg">Connect with me</h4>
-                    </div>
-                  </div>
-                  <ArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-                </div>
-              </a>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <a
-                href=" https://github.com/UlinduDakshitha"
-                target="_blank"
-                rel="noreferrer"
-                className="group block rounded-[24px] border border-white/10 bg-white/5 p-5 hover:border-white/20 hover:bg-white/10 transition"
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/5">
-                      <FaGithub size={22} />
-                    </div>
-                    <div>
-                      <p className="text-xs tracking-[0.3em] uppercase text-gray-400">
-                        GitHub
-                      </p>
-                      <h4 className="font-semibold text-lg">
-                        Check out my code
-                      </h4>
-                    </div>
-                  </div>
-                  <ArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-                </div>
-              </a>
-            </Reveal>
-
-            <Reveal delay={0.25}>
-              <div className="rounded-[24px] border border-cyan-500/20 bg-cyan-500/10 p-5">
-                <div className="flex items-start gap-3">
-                  <Clock3 size={18} className="mt-1 text-cyan-300" />
-                  <div>
-                    <h4 className="font-medium text-white">Quick Response</h4>
-                    <p className="text-sm text-gray-400">
-                      I aim to respond to all messages within 24 hours during
-                      weekdays.
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="font-medium text-white">Quick Response</h4>
+                  <p className="text-sm text-gray-400">
+                    I aim to respond to all messages within 24 hours during weekdays.
+                  </p>
                 </div>
               </div>
-            </Reveal>
+            </div>
           </div>
         </div>
       </div>
