@@ -49,7 +49,7 @@ export default function Projects() {
       title: "CEYLONCONNECT",
       subtitle: "Group Project",
       role: "Frontend Lead",
-      image: "/images/ceylonconnect.jpg",
+      image: "/images/ceylonConnect.jpg",
       description:
         "A tourism platform connecting travelers with Sri Lankan destinations and services, built with a focus on performance and responsive interfaces.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Prisma"],
