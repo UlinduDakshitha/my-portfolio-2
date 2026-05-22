@@ -7,6 +7,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-5 sm:px-6 py-4">
           {/* Logo */}
 
+
           <a href="#home" className="flex items-center gap-3">
             <div className="relative">
               <div className="rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 to-blue-500 shadow-[0_6px_24px_rgba(6,182,212,0.12)]">
