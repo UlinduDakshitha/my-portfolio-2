@@ -24,7 +24,6 @@ export default function Navbar() {
             </div>
           </a>
  
- 
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
             <a
