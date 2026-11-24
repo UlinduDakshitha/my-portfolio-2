@@ -41,17 +41,28 @@ import {
   SiReact,
   SiTensorflow,
   SiPytorch,
+  SiAngular,
+  SiFlutter,
 } from "react-icons/si";
 
 const categories = [
   {
     title: "Languages",
     skills: [
-      { name: "HTML5", icon: <FaHtml5 />, color: "text-orange-500" },
-      { name: "CSS3", icon: <FaCss3Alt />, color: "text-blue-500" },
+     
       { name: "JavaScript", icon: <FaJs />, color: "text-yellow-400" },
       { name: "TypeScript", icon: <SiTypescript />, color: "text-blue-400" },
       { name: "Java", icon: <FaJava />, color: "text-orange-400" },
+      {
+        name: "C#",
+        icon: (
+          <span className="font-black text-lg md:text-xl tracking-tight">
+            C#
+          </span>
+        ),
+        color: "text-violet-400",
+      },
+         { name: "Python", icon: <FaPython />, color: "text-yellow-300" },
     ],
   },
 
@@ -60,7 +71,7 @@ const categories = [
     skills: [
       { name: "React", icon: <FaReact />, color: "text-cyan-400" },
       { name: "Next.js", icon: <SiNextdotjs />, color: "text-white" },
-      { name: "React Native", icon: <SiReact />, color: "text-cyan-400" },
+      { name: "Angular", icon: <SiAngular />, color: "text-red-500" },
       { name: "Redux", icon: <SiRedux />, color: "text-violet-400" },
       { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "text-cyan-300" },
     ],
@@ -72,6 +83,24 @@ const categories = [
       { name: "Node.js", icon: <FaNodeJs />, color: "text-lime-400" },
       { name: "Express", icon: <SiExpress />, color: "text-gray-200" },
       { name: "Spring", icon: <SiSpring />, color: "text-lime-400" },
+      {
+        name: "ASP.NET Core",
+        icon: (
+          <span className="font-black text-lg md:text-xl tracking-tight">
+            .NET
+          </span>
+        ),
+        color: "text-purple-400",
+      },
+      {
+        name: "NestJS",
+        icon: (
+          <span className="font-black text-lg md:text-xl tracking-tight">
+            Nest
+          </span>
+        ),
+        color: "text-red-500",
+      },
     ],
   },
 
@@ -80,41 +109,65 @@ const categories = [
     skills: [
       { name: "MongoDB", icon: <SiMongodb />, color: "text-green-500" },
       { name: "MySQL", icon: <SiMysql />, color: "text-blue-400" },
-      { name: "Hibernate", icon: <SiHibernate />, color: "text-yellow-300" },
       { name: "PostgreSQL", icon: <SiPostgresql />, color: "text-blue-300" },
     ],
   },
 
   {
-    title: "DevOps & Tools",
+    title: "Mobile",
+    skills: [
+      { name: "Flutter", icon: <SiFlutter />, color: "text-cyan-400" },
+      { name: "React Native", icon: <SiReact />, color: "text-cyan-300" },
+    ],
+  },
+
+  {
+    title: "DevOps",
     skills: [
       { name: "Git", icon: <FaGitAlt />, color: "text-orange-500" },
       { name: "GitHub", icon: <FaGithub />, color: "text-white" },
       { name: "Docker", icon: <FaDocker />, color: "text-blue-400" },
       { name: "AWS", icon: <FaAws />, color: "text-yellow-400" },
       { name: "Kubernetes", icon: <SiKubernetes />, color: "text-blue-500" },
+      {
+        name: "Oracle Cloud",
+        icon: (
+          <span className="font-black text-xl md:text-2xl leading-none">
+            OCI
+          </span>
+        ),
+        color: "text-red-500",
+      },
       { name: "Linux", icon: <FaLinux />, color: "text-yellow-200" },
       { name: "Ubuntu", icon: <SiUbuntu />, color: "text-orange-400" },
-      { name: "Postman", icon: <SiPostman />, color: "text-orange-400" },
-      {
-        name: "Android Studio",
-        icon: <SiAndroidstudio />,
-        color: "text-green-400",
-      },
-      {
-        name: "IntelliJ IDEA",
-        icon: <SiIntellijidea />,
-        color: "text-pink-400",
-      },
-      { name: "Figma", icon: <FaFigma />, color: "text-pink-400" },
+     
+       
+     
+      
     ],
   },
   {
     title: "AI / ML",
     skills: [
-      { name: "Python", icon: <FaPython />, color: "text-yellow-300" },
-      { name: "TensorFlow", icon: <SiTensorflow />, color: "text-indigo-400" },
-      { name: "PyTorch", icon: <SiPytorch />, color: "text-red-400" },
+      {
+        name: "NumPy",
+        icon: (
+          <span className="font-black text-base md:text-lg tracking-tight">
+            NumPy
+          </span>
+        ),
+        color: "text-blue-400",
+      },
+      {
+        name: "Pandas",
+        icon: (
+          <span className="font-black text-base md:text-lg tracking-tight">
+            pandas
+          </span>
+        ),
+        color: "text-violet-400",
+      },
+    
     ],
   },
 ];
@@ -123,13 +176,14 @@ export default function Skills() {
   const [active, setActive] = useState("All");
 
   const pills = [
-    "All",
-    "Languages",
-    "Frontend",
-    "Backend",
-    "Database",
-    "AI / ML",
-    "DevOps & Tools",
+    { label: "All", value: "All" },
+    { label: "Languages", value: "Languages" },
+    { label: "Frontend", value: "Frontend" },
+    { label: "Backend", value: "Backend" },
+    { label: "Database", value: "Database" },
+    { label: "Mobile", value: "Mobile" },
+    { label: "AI / ML", value: "AI / ML" },
+    { label: "DevOps", value: "DevOps" },
   ];
 
   const visibleCategories =
@@ -154,15 +208,15 @@ export default function Skills() {
           <div className="flex items-center gap-3 mb-6 flex-wrap">
             {pills.map((p) => (
               <button
-                key={p}
-                onClick={() => setActive(p)}
+                key={p.value}
+                onClick={() => setActive(p.value)}
                 className={`px-4 py-1.5 rounded-full border text-sm font-medium transition ${
-                  active === p
+                  active === p.value
                     ? "bg-linear-to-r from-purple-600 to-indigo-600 text-white border-transparent"
                     : "bg-transparent text-gray-200 border border-white/10"
                 }`}
               >
-                {p}
+                {p.label}
               </button>
             ))}
           </div>
@@ -172,10 +226,6 @@ export default function Skills() {
               {/* Category Heading */}
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-2xl font-semibold">{category.title}</h3>
-
-                <p className="text-sm text-gray-500">
-                  Showing {category.skills.length} technologies
-                </p>
               </div>
 
               {/* Skills Grid */}

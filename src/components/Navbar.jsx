@@ -48,6 +48,13 @@ export default function Navbar() {
             </a>
 
             <a
+              href="#experience"
+              className="hover:text-white transition duration-300"
+            >
+              Experience
+            </a>
+
+            <a
               href="#projects"
               className="hover:text-white transition duration-300"
             >

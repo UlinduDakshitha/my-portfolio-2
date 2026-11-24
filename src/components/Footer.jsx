@@ -76,7 +76,7 @@ export default function Footer() {
                 Email: ulindudakshitha001@gmail.com
               </a>
               <p>Location: Colombo,Sri Lanka</p>
-              <p>Open to opportunities</p>
+             
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3 text-sm text-gray-400 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Ulindu. All rights reserved.</p>
-          <p>Built with Next.js &amp; Tailwind CSS</p>
+          
         </div>
       </div>
     </footer>
